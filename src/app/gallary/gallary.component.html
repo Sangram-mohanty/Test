@@ -1,0 +1,22 @@
+<div class="container"> 
+<div class="row">
+    <div class="col-md-3" *ngFor="let gal of gallery">
+        <div class="gal-img" (click)="popimg(gal)">
+            <div class="ttl">{{gal.ttl}}</div>
+            <div class="image">
+                <img src="{{gal.img}}" alt="img" />
+                <div class="desc">{{gal.desc}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="trans-bg" *ngIf="largeView"></div>
+<div class="view-img" *ngIf="largeView">
+    <i class="close" (click)="largeView=false">X</i>
+    <img [src]="lgImg.img" alt="" class="large"/>
+    <div class="descript">
+        <h3>{{lgImg.ttl}}</h3>
+        <p>{{lgImg.desc}}</p>
+    </div>
+</div>
+</div>

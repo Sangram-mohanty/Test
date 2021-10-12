@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        
+
+       
+      </div>
+    </nav> -->
+
+    <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+
+      <div class="my-4 w-100 text-center" id="myChart" >
+        <img src="{{gallery[0].img}}" alt="img" style="max-width: 100%; " />
+  
+      </div>
+      <div class="row ">
+        <div class="col-md-3" style="padding-right: 0;">
+            <div class="bnews">Breacking News</div>
+        </div>
+        <div class="col-md-9" style="padding-left: 0;">
+          <div class="bg"><marquee><a style="line-height: 30px;" href="https://www.youtube.com/watch?v=7wf05etYvwE">Security Tightened In Cuttack For Durga Puja & Night Curfew</a></marquee></div>
+        </div>
+       </div>
+       <div class="row mt-2">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- <div>
+                <img src="{{gallery[0].img}}" alt="img" style="max-width: 100%;" />
+              </div> -->
+              <div class="image">
+                <img src="{{gallery[3].img}}" alt="img" style=""  />
+                <div class="desc">{{gallery[0].desc}}</div>
+            </div>
+            </div>
+            <div class="col-md-4">
+              <span class="news-item-story">OPTCL Recruitment 2021 OPTCL Recruitment 2021: Last Chance To Apply</span><br>
+              <span>He cited examples of the use of geo-tagging of housing units for the poor, roads and other infrastructure...</span>             
+               <carousel [autoplay]="true" [loop]="true" [arrows]="false" style="height: 140px;"> 
+                <div class="carousel-cell">
+                  <img class="carousel-img" src="{{gallery[1].img}}">
+                </div>
+                <div class="carousel-cell">
+                  <img  class="carousel-img" src="{{gallery[2].img}}">
+                </div>
+                
+               
+      </carousel>
+            </div>
+
+          </div>
+          <div class="comments my-2">
+            <div class="show-list" *ngIf="showuserlist">
+              <div class="li" *ngFor="let user of userList" (click)="pickUser(commentStr.value, user.username)">{{user.username}}</div>
+            </div>
+            <textarea #commentStr [value]="commentVal" name="comment" placeholder="Some Text.." (keyup)="checkUser($event)"></textarea>
+            <div class="text-right"><button type="button" class="btn btn-primary">Submit</button></div>
+          </div>
+         
+          
+        </div>
+        <div class="col-md-4">
+          <div class="article my-1 p-1" style="background-color: #eee;" *ngFor="let gal of gallery1">
+        <div class="row" >
+          <div class="col-md-5">
+            <img class="xx" src="{{gal.img}}">
+          </div>
+          <div class="col-md-7">
+           {{gal.ttl}}
+          
+          </div>
+        </div>
+      </div>
+        </div>
+       </div>
+    </main>
+  </div>
+</div>
